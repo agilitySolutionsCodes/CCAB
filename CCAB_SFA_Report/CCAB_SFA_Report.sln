@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "CCAB_SFA_Report", "CCAB_SFA_Report\CCAB_SFA_Report.rptproj", "{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CCAB_SFA_Report\\CCAB_SFA_Report.rptproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = CCAB_SFA_Report\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}.Debug|Default.ActiveCfg = Debug
+		{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}.Debug|Default.Build.0 = DebugLocal
+		{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}.Debug|Default.Deploy.0 = DebugLocal
+		{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}.DebugLocal|Default.Build.0 = DebugLocal
+		{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}.Production|Default.ActiveCfg = Production
+		{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}.Production|Default.Build.0 = Production
+		{647D27C0-B39B-47DA-A7B7-C2EF8C7960F3}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class _SFA_CessaoCredito_Filtro : System.Web.UI.UserControl
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        GridView gv = (GridView)Parent.FindControl("Resultado1").FindControl("GridView1");
+        CronogramaSafraCessaoCredito obj = new CronogramaSafraCessaoCredito();
+
+        gv.DataSource = obj.ObterLista(Convert.ToInt64(Session["cdCronogramaSafraSEQ"])).AsDataView();
+        gv.DataBind();  
+    }
+}

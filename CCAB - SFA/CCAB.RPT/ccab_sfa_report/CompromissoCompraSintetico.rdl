@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="CCAB_SFA_DESENVOLVIMENTO">
+      <rd:DataSourceID>b726c2fd-a792-401e-abdb-ccf4aa456f55</rd:DataSourceID>
+      <DataSourceReference>CCAB_SFA_DESENVOLVIMENTO</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>21cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="cdCompromissoCompraSEQ">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Número Compromisso</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="cdAgenteComercialCooperativaCompromissoCompra">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Agente</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="cdCronogramaSafraSEQ">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Safra</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="cdIndicadorStatusCompromissoCompra">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Status</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="cdIndicadorMoedaCompromissoCompra">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Moeda</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="cdPessoaOrigemFaturamento">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>cdPessoaOrigemFaturamento</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="blExibirPreco">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>True</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Exibir Preço?</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>29.7cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5cm</RightMargin>
+  <LeftMargin>0.5cm</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>FitProportional</Sizing>
+        <Width>3.75cm</Width>
+        <MIMEType />
+        <Source>External</Source>
+        <Style />
+        <ZIndex>2</ZIndex>
+        <Height>1cm</Height>
+        <Value>logoccab.jpg</Value>
+      </Image>
+      <Textbox Name="textbox1">
+        <Top>0.25cm</Top>
+        <Width>10.2381cm</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>9cm</Left>
+        <Height>0.74074cm</Height>
+        <Value>Compromisso de Compra</Value>
+      </Textbox>
+      <Line Name="line1">
+        <Top>1.25cm</Top>
+        <Style>
+          <BorderColor>
+            <Default>Gray</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>2pt</Default>
+          </BorderWidth>
+        </Style>
+      </Line>
+    </ReportItems>
+    <Height>1.25cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.5cm</BottomMargin>
+  <rd:ReportID>fe632bc8-999b-4c58-9260-e6956fa0aa67</rd:ReportID>
+  <PageWidth>29.7cm</PageWidth>
+  <DataSets>
+    <DataSet Name="dsCompromissoCompraSintetico">
+      <Fields>
+        <Field Name="cdCompromissoCompraSEQ">
+          <DataField>cdCompromissoCompraSEQ</DataField>
+        </Field>
+        <Field Name="cdAgenteComercialCooperativaCompromissoCompra">
+          <DataField>cdAgenteComercialCooperativaCompromissoCompra</DataField>
+        </Field>
+        <Field Name="nmAgenteComercialCooperativaCompromissoCompra">
+          <DataField>nmAgenteComercialCooperativaCompromissoCompra</DataField>
+        </Field>
+        <Field Name="cdCronogramaSafraSEQ">
+          <DataField>cdCronogramaSafraSEQ</DataField>
+        </Field>
+        <Field Name="dsCronogramaSafra">
+          <DataField>dsCronogramaSafra</DataField>
+        </Field>
+        <Field Name="cdIndicadorMoedaCompromissoCompra">
+          <DataField>cdIndicadorMoedaCompromissoCompra</DataField>
+        </Field>
+        <Field Name="dsIndicadorMoedaCompromissoVenda">
+          <DataField>dsIndicadorMoedaCompromissoVenda</DataField>
+        </Field>
+        <Field Name="vrTotalMoedaCompromissoCompra">
+          <DataField>vrTotalMoedaCompromissoCompra</DataField>
+        </Field>
+        <Field Name="vrTotalAbertoMoedaCompromissoCompra">
+          <DataField>vrTotalAbertoMoedaCompromissoCompra</DataField>
+        </Field>
+        <Field Name="dtEmissaoCompromissoCompra">
+          <DataField>dtEmissaoCompromissoCompra</DataField>
+        </Field>
+        <Field Name="cdIndicadorStatusCompromissoCompra">
+          <DataField>cdIndicadorStatusCompromissoCompra</DataField>
+        </Field>
+        <Field Name="dsIndicadorStatusCompromissoCompra">
+          <DataField>dsIndicadorStatusCompromissoCompra</DataField>
+        </Field>
+        <Field Name="cdAgenteComercialRCCompromissoCompra">
+          <DataField>cdAgenteComercialRCCompromissoCompra</DataField>
+        </Field>
+        <Field Name="nmAgenteComercialRCCompromissoCompra">
+          <DataField>nmAgenteComercialRCCompromissoCompra</DataField>
+        </Field>
+        <Field Name="cdAgenteComercialCCABCompromissoCompra">
+          <DataField>cdAgenteComercialCCABCompromissoCompra</DataField>
+        </Field>
+        <Field Name="nmAgenteComercialCCABCompromissoCompra">
+          <DataField>nmAgenteComercialCCABCompromissoCompra</DataField>
+        </Field>
+        <Field Name="cdProdutoSEQ">
+          <DataField>cdProdutoSEQ</DataField>
+        </Field>
+        <Field Name="dsProduto">
+          <DataField>dsProduto</DataField>
+        </Field>
+        <Field Name="qtEmbalagemProduto">
+          <DataField>qtEmbalagemProduto</DataField>
+        </Field>
+        <Field Name="qtCompromissoCompraItem">
+          <DataField>qtCompromissoCompraItem</DataField>
+        </Field>
+        <Field Name="qtAbertoCompromissoCompraItem">
+          <DataField>qtAbertoCompromissoCompraItem</DataField>
+        </Field>
+        <Field Name="vrUnitarioMoedaCompromissoCompraItem">
+          <DataField>vrUnitarioMoedaCompromissoCompraItem</DataField>
+        </Field>
+        <Field Name="vrTotalMoedaCompromissoCompraItem">
+          <DataField>vrTotalMoedaCompromissoCompraItem</DataField>
+        </Field>
+        <Field Name="vrTotalMoedaAbertoCompromissoCompraItem">
+          <DataField>vrTotalMoedaAbertoCompromissoCompraItem</DataField>
+        </Field>
+        <Field Name="dtCronogramaSafraVencimento">
+          <DataField>dtCronogramaSafraVencimento</DataField>
+        </Field>
+        <Field Name="calculado_ValorUtilizacao">
+          <Value>=Fields!vrTotalMoedaCompromissoCompra.Value-(Fields!vrTotalAbertoMoedaCompromissoCompra.Value)</Value>
+        </Field>
+        <Field Name="calculado_PercentualValorUtilizacao">
+          <Value>=Fields!calculado_ValorUtilizacao.Value / Fields!vrTotalMoedaCompromissoCompra.Value</Value>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CCAB_SFA_DESENVOLVIMENTO</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>sp_s_rel_CompromissoCompraSintetico</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@cdCompromissoCompraSEQ">
+            <Value>=Parameters!cdCompromissoCompraSEQ.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@cdAgenteComercialCooperativaCompromissoCompra">
+            <Value>=Parameters!cdAgenteComercialCooperativaCompromissoCompra.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@cdCronogramaSafraSEQ">
+            <Value>=Parameters!cdCronogramaSafraSEQ.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@cdIndicadorStatusCompromissoCompra">
+            <Value>=Parameters!cdIndicadorStatusCompromissoCompra.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@cdIndicadorMoedaCompromissoCompra">
+            <Value>=Parameters!cdIndicadorMoedaCompromissoCompra.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@cdPessoaOrigemFaturamento">
+            <Value>=Parameters!cdPessoaOrigemFaturamento.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="dsCronogramaSafra">
+      <Fields>
+        <Field Name="cdCronogramaSafraSEQ">
+          <DataField>cdCronogramaSafraSEQ</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="dsCronogramaSafra">
+          <DataField>dsCronogramaSafra</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CCAB_SFA_DESENVOLVIMENTO</DataSourceName>
+        <CommandText>select cdCronogramaSafraSEQ, dsCronogramaSafra from CronogramaSafra order by dsCronogramaSafra</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>28.25cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>dsCompromissoCompraSintetico</DataSetName>
+        <Top>0.5cm</Top>
+        <Width>23.77646cm</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="cdCompromissoCompraSEQ">
+                      <rd:DefaultName>cdCompromissoCompraSEQ</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!cdCompromissoCompraSEQ.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="nmAgenteComercialCooperativaCompromissoCompra">
+                      <rd:DefaultName>nmAgenteComercialCooperativaCompromissoCompra</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!nmAgenteComercialCooperativaCompromissoCompra.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="dsCronogramaSafra">
+                      <rd:DefaultName>dsCronogramaSafra</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!dsCronogramaSafra.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="dtEmissaoCompromissoCompra">
+                      <rd:DefaultName>dtEmissaoCompromissoCompra</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Format>dd/MM/yyyy</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!dtEmissaoCompromissoCompra.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="dsIndicadorMoedaCompromissoVenda">
+                      <rd:DefaultName>dsIndicadorMoedaCompromissoVenda</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!dsIndicadorMoedaCompromissoVenda.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="vrTotalMoedaCompromissoCompra">
+                      <rd:DefaultName>vrTotalMoedaCompromissoCompra</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Format>#,##0.0000</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!vrTotalMoedaCompromissoCompra.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="vrTotalAbertoMoedaCompromissoCompra">
+                      <rd:DefaultName>vrTotalAbertoMoedaCompromissoCompra</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Format>#,##0.0000</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!calculado_ValorUtilizacao.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="calculado_PercentualValorUtilizacao">
+                      <rd:DefaultName>calculado_PercentualValorUtilizacao</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Format>##0.00%</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!calculado_PercentualValorUtilizacao.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="vrTotalAbertoMoedaCompromissoCompra_1">
+                      <rd:DefaultName>vrTotalAbertoMoedaCompromissoCompra_1</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Format>#,##0.0000</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!vrTotalAbertoMoedaCompromissoCompra.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.5cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox78">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>17</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Nº do Compromisso</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox79">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>16</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Agente</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox80">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Safra</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox81">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Dt. Emissão</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox82">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Moeda</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox83">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Valor Total</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox85">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Valor Consumido</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox86">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Consumido(%)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox98">
+                      <Style>
+                        <BackgroundColor>YellowGreen</BackgroundColor>
+                        <BorderColor>
+                          <Default>Green</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Saldo</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.5cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>2.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.02646cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1cm</Height>
+      </Table>
+    </ReportItems>
+    <Height>1.75cm</Height>
+  </Body>
+  <Language>pt-BR</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox6">
+        <rd:DefaultName>textbox6</rd:DefaultName>
+        <Top>0.5cm</Top>
+        <Width>10.53968cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Value>= "Impresso em: " &amp; Format(Now, "dd/MM/yyyy HH:mm:ss")</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Top>0.5cm</Top>
+        <Width>10.98677cm</Width>
+        <Style>
+          <FontSize>9pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>17.25cm</Left>
+        <Value>= "Página " &amp; Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Line Name="line2">
+        <Top>0.25cm</Top>
+        <Style>
+          <BorderColor>
+            <Default>Gray</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>2pt</Default>
+          </BorderWidth>
+        </Style>
+        <Height>0cm</Height>
+      </Line>
+    </ReportItems>
+    <Height>1.00265cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

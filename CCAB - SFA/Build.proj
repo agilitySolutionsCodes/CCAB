@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="MergeWebSite" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PhysicalPath>.</PhysicalPath>
+    <TargetPath>C:\Deploy\SFA</TargetPath>
+    <VirtualPath>/App</VirtualPath>
+    <Force>true</Force>
+    <Debug>false</Debug>
+    <AssemblyName>App</AssemblyName>
+  </PropertyGroup>
+  <Target Name="CompileWebSite">
+    <Message Text="Compiling $(VirtualPath)"/>
+    <AspNetCompiler
+       PhysicalPath="$(PhysicalPath)"
+        TargetPath="$(TargetPath)"
+        VirtualPath="$(VirtualPath)"
+        Force="$(Force)"
+        Debug="$(Debug)"/>
+  </Target>
+  <Target Name="MergeWebSite" DependsOnTargets="CompileWebSite"  >
+    <Message Text="Merging compiled site"/>
+    <Exec Command='aspnet_merge.exe "$(TargetPath)" -o $(AssemblyName) '
+           WorkingDirectory="C:\Program Files\Microsoft SDKs\Windows\v6.0A\Bin"
+          />
+  </Target>
+</Project>

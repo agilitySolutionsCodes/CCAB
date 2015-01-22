@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CCAB - SFA", "..\CCAB - SFA", "{A6F64BBC-7DE0-45E7-A0A8-4558EAFE5857}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/CCAB - SFA", YYDAAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/CCAB - SFA"
+		Debug.AspNetCompiler.PhysicalPath = "..\CCAB - SFA\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CCAB - SFA\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CCAB - SFA"
+		Release.AspNetCompiler.PhysicalPath = "..\CCAB - SFA\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CCAB - SFA\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4269"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6F64BBC-7DE0-45E7-A0A8-4558EAFE5857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F64BBC-7DE0-45E7-A0A8-4558EAFE5857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccWebProject0 = true
+		SccProjectUniqueName0 = .
+		SccProjectName0 = \u0022$/CCAB\u0020-\u0020SFA\u0022,\u0020YYDAAAAA
+		SccLocalPath0 = C:\\Users\\jorge.cruz\\Documents\\Visual\u0020Studio\u00202008\\Projects\\CCAB\u0020-\u0020SFA
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectEnlistmentChoice0 = 2
+	EndGlobalSection
+EndGlobal

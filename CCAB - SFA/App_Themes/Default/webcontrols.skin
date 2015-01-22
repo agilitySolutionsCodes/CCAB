@@ -1,0 +1,67 @@
+<asp:Label 
+    CssClass="label" 
+    runat="server" />
+    
+<asp:Label 
+    SkinID="normal" 
+    runat="server" />
+
+<asp:Label 
+    SkinID="data" 
+    CssClass="literalData" 
+    runat="server" />
+                       
+<asp:GridView 
+    AutoGenerateColumns="false" 
+    AllowPaging="true"  
+    AllowSorting="false" 
+    
+    PageSize="20" 
+    EmptyDataText="Nenhum registro localizado."
+    EmptyDataRowStyle-BackColor="#FFFFFF" 
+    EmptyDataRowStyle-Font-Size="12px" 
+     
+    BorderWidth="0"  
+    CellPadding="0"
+    CellSpacing="1"
+    Width="100%" 
+    
+    CssClass="grid" 
+    GridLines="Both"
+    AlternatingRowStyle-CssClass="tbGrid_Branca" 
+    RowStyle-CssClass="tbGrid_cinzaClara"     
+    
+    PagerStyle-Font-Size="Smaller"
+    PagerStyle-BackColor="#FFFFFF"
+    PagerSettings-Mode="NumericFirstLast" 
+    PagerSettings-PageButtonCount="7"
+    PagerSettings-Position="Bottom" 
+    PagerSettings-FirstPageText="«"
+    PagerSettings-NextPageText=">"
+    PagerSettings-PreviousPageText="<"
+    PagerSettings-LastPageText="»" 
+    PagerStyle-HorizontalAlign="Right"
+    PagerStyle-Font-Bold="true"
+    Runat="Server" />
+    
+<asp:GridView 
+    SkinID="NoPaging"
+    AutoGenerateColumns="false" 
+    AllowPaging="false"  
+    AllowSorting="false" 
+    
+    EmptyDataText="Nenhum registro localizado."
+    EmptyDataRowStyle-BackColor="#FFFFFF" 
+    EmptyDataRowStyle-Font-Size="12px" 
+     
+    BorderWidth="0"  
+    CellPadding="0"
+    CellSpacing="1"
+    Width="100%" 
+    
+    CssClass="grid" 
+    GridLines="Both"
+    AlternatingRowStyle-CssClass="tbGrid_Branca" 
+    RowStyle-CssClass="tbGrid_cinzaClara"     
+    
+    Runat="Server" />

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>CCAB_SFA_DESENVOLVIMENTO</Name>
+  <DataSourceID>7144431a-685a-44f1-b036-59ab2e55e549</DataSourceID>
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=CSAOT005;Initial Catalog=CCAB_SFA_Desenv</ConnectString>
+  </ConnectionProperties>
+</RptDataSource>

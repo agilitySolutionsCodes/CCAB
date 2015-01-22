@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s0="http://csaot007:85/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://csaot007:85/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://csaot007:85/">
+      <s:element name="INCLUSAO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PEDIDO" type="s0:PEDIDO_VENDA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INCLUSAORESPONSE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="INCLUSAORESULT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PEDIDO_VENDA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AITEMPV" type="s0:ARRAYOFITEM_PV" />
+          <s:element minOccurs="1" maxOccurs="1" name="CABECPV" type="s0:CABEC_PV" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ITEM_PV">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ENTREG" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ITEMSFA" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="NUMSFA" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRCVEN" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRODUTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QTDVEN" type="s:float" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CABEC_PV">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CONDPAG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA6" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EMISSAO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ESPECI1" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MOEDA" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="NUMSFA" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARC1" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARC2" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARC3" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARC4" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARC5" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARC6" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="TABELA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VEND1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VEND2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VEND3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VEND4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VEND5" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VOLUME1" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="XCLIENT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="XCLIFAT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="XHISTCO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="XLOJAENT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="XLOJAFAT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="XOBSERV" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="XTPPED" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ARRAYOFITEM_PV">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ITEM_PV" type="s0:ITEM_PV" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="INCLUSAOSOAPIN">
+    <part name="parameters" element="s0:INCLUSAO" />
+  </message>
+  <message name="INCLUSAOSOAPOUT">
+    <part name="parameters" element="s0:INCLUSAORESPONSE" />
+  </message>
+  <portType name="PEDIDOSOAP">
+    <operation name="INCLUSAO">
+      <input message="s0:INCLUSAOSOAPIN" />
+      <output message="s0:INCLUSAOSOAPOUT" />
+    </operation>
+  </portType>
+  <binding name="PEDIDOSOAP" type="s0:PEDIDOSOAP">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="INCLUSAO">
+      <soap:operation soapAction="http://csaot007:85/INCLUSAO" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PEDIDO">
+    <port name="PEDIDOSOAP" binding="s0:PEDIDOSOAP">
+      <soap:address location="http://csaot007:85/ws/PEDIDO.apw" />
+    </port>
+  </service>
+</definitions>

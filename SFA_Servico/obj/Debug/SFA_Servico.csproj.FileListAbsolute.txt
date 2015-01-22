@@ -1,0 +1,2 @@
+E:\Projetos\01. Clientes\CCAB\Deploy\SFA_Servico\SFA_Servico.exe.config
+C:\CCAB\Deploy\SFA_Servico\SFA_Servico.exe.config

@@ -1,0 +1,363 @@
+/* 
+Alterações de estilo - Hélcio Bertolin 12/12/2008
+
+1 - Paths das imagens precisaram ser adaptados para trabalhar no padrão Asp.Net "Themes" 
+2 - Atributos de medidas como width, height, padding e outros estavam sem a unidade "px" distorcendo o layout 
+3 - "font-family" foi colocada somente em "body" e retirada das classes 
+4 - Classes "Table" adaptadas para estilizar o controle GridView
+*/
+
+/* Início Classes Hélcio */
+a
+{
+    text-decoration: none;
+    color: #000000;
+}
+a:hover
+{
+    color: Green;
+}
+
+td a
+{
+    color: blue;
+    text-decoration: underline;
+}
+td a:hover
+{
+    color: Green;
+}
+
+.treeview{
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: smaller;
+}
+.treeviewselected
+{
+    padding: 0 3px 0 3px; 
+	background-image:url(../../imgsCCAB/bts_background.jpg); background-repeat:repeat-x;
+    text-decoration: none;
+}
+.treeviewParentNode
+{
+    font-weight: bold;
+    cursor: default;
+    padding: 0 3px 0 3px; 
+	background-image:url(../../imgsCCAB/bts_background.jpg); background-repeat:repeat-x;
+    text-decoration: none;
+}
+.treeViewLeafNode{
+	font-size:12px; color:#FFFFFF;
+	font-variant:small-caps; font-weight:bold; text-align:center; 
+	text-decoration:none;
+	}
+	
+.treeViewLeafNode:hover{
+	font-size:12px; color: Green;
+	font-variant:small-caps; font-weight:bold; text-align:center; 
+	text-decoration:none;
+	}
+.treeview a
+{
+    color: #000000;
+}
+.rootnode
+{
+    color: #000000;
+    font-weight: bold;
+}
+
+.grid {
+	background-color:#566432;
+	}
+.grid th
+{
+    height: 32px;
+    padding: 0 2px;
+    font-size:11px; color:#FFFFFF; font-weight:bold;
+	background-color:#668024;
+	/*text-align:center;*/
+}
+.grid th a
+{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.grid th a:hover
+{
+    color: #ffff00;
+}
+.grid td
+{
+    font-size: inherit;
+    padding: 0 2px;
+    vertical-align: middle;
+    color: #000000;
+    height: 25px;
+    /*text-align:center;*/
+}
+
+.button{
+    background: #90b530 url(../../imgsCCAB/bts_background.jpg) repeat-x;
+    border: solid 1px Transparent ;
+    font-variant: small-caps; font-weight:bold;
+	color: #FFFFFF; 
+	width: 100px; height: 24px;
+}
+.button:hover{
+	color:#ffff00;
+	}
+	
+.label, .literalData 
+{
+    vertical-align: top;
+	padding-right: 3px;
+	font-size: 90%;
+}
+.label
+{   
+    color: #808080; 
+    font-weight: bold;
+}
+.literalData 
+{
+	color: #000000;
+}
+
+div.pageSection{margin-bottom: 20px; text-align: left;}
+p{margin: 0 10px; padding-bottom: 1em; text-align: justify; font-size: 75%; color: #808080;}
+h2{font-size: 140%; margin: 3px 10px 10px 10px; color: #fff;}
+h2.msgTitle{margin-left: 60px;}
+/* Ajax Modal Popups */
+div.popup{padding: 10px; text-align: left; background: #DFDFDF; width: 500px;}
+div.drag{cursor: move;}
+fieldset.fieldsetForm{background: #ffffff; padding: 10px}
+div.buttonalign{margin: 10px 10px 0 2px; text-align: right;}
+div.msgHeaderImage{text-align: left; vertical-align: middle; line-height: 48px;}
+div.modalBackground 
+{
+    background-color: #000000;
+    filter: alpha(opacity=65); 
+    opacity: 0.65; 
+    /*
+    background-color: #ffffff; 
+    filter: alpha(opacity=1); 
+    opacity: 0.01;  
+    */
+}
+/* Fim Classes Hélcio */
+
+html, body {
+    font-family:Arial, Helvetica, sans-serif;
+	background-color: #cccdce;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/*Classes Carlos para exibição rodapé*/
+#container {
+   min-height: 100%;
+   position: relative;
+}
+
+#cabecalho {
+   width: 100%;
+   padding: 0px;
+}
+
+#body {
+   width: 100%;
+   padding: 0px;
+   padding-bottom: 45px;   /* altura do rodape */
+}
+
+#rodape{
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 45px;   /* altura do rodape */
+}
+/* Fim Classes Carlos */
+
+/* Fontes */
+
+.fonteTbCadastro{
+	font-size:12px; color:#333333; 
+	padding-left:5px; text-align:right; font-weight:bold;
+	}
+
+
+/* TDS */
+
+.tdTopo_background{
+	background-image:url(../../imgsCCAB/topoBG.jpg);
+	background-repeat:repeat-x;
+	height:93px;
+	}
+
+.tdTopo_background02{
+	background-image:url(../../imgsCCAB/topoBG_02.jpg);
+	background-repeat:repeat-x;
+	height:93px;
+	}
+	
+.tdRodape{
+	background-image:url(../../imgsCCAB/rodapeBG.jpg);
+	text-align:right; vertical-align:top; 
+	background-repeat:repeat-x;
+	}
+
+.tdBG_defaultEsquerdo{
+	background-image:url(../../imgsCCAB/defaulBGesquerdo.jpg);
+	background-repeat:repeat-x; background-position:top;
+	}
+	
+.tdBG_defaultDireito{
+	background-image:url(../../imgsCCAB/defaulBGdireito.jpg);
+	background-repeat:repeat-x; background-position:top;
+	}
+	
+.tdImagem_background{
+	background-image:url(../../imgsCCAB/defaultImagemComplete.jpg);
+	background-repeat:repeat-x; background-position:top;
+	}
+	
+.tdRodape02{
+	background-image:url(../../imgsCCAB/comumRodapeBG.jpg);
+	background-repeat:repeat-x;
+	height:40px; vertical-align:top;
+	text-align:center;
+	}
+	
+.tdTopo_nomeCooperativa{
+ 	background: url(../../imgsCCAB/comumTopo_03.jpg);
+	background-repeat:no-repeat;
+	font-size:10px; color:#333333;
+	font-weight:bold; padding-left:80px; padding-top:7px; height:28px; 
+	}
+	
+.tdTopo_nomeUsuario{
+	background-image:url(../../imgsCCAB/comumTopoBG_usuario.jpg); background-repeat:repeat-x;
+	font-size:10px; color:#333333;
+	font-weight:bold; padding-right:20px; padding-top:7px; text-align:right;
+	}
+	
+.tdTopo_background03{
+	background-image:url(../../imgsCCAB/comumTopoBG.jpg); background-repeat:repeat-x;
+	}
+
+.MenuBG{
+	background-color:#f3f7e9;
+	}
+	
+.tdConteudo{
+	text-align:center;
+	padding:25px;
+	}
+	
+.tdCamposFormularios{
+	padding-left:5px; text-align:left;
+	}
+	
+/* Tabelas */
+
+.tbTitulo_bordaEsquerda{
+	background-image:url(../../imgsCCAB/tbTituloPg_bordaEsquerda.jpg); background-repeat:no-repeat;
+	height:36px; width:8px;
+	vertical-align:top;
+	}
+	
+.tbTitulo_bordaDireita{
+	background-image:url(../../imgsCCAB/tbTituloPg_bordaDireita.jpg); background-repeat:no-repeat;
+	height:36px; width:8px;
+	vertical-align:top;
+	}
+	
+.tbTitulo_BG{
+	background-image:url(../../imgsCCAB/tbTituloPg_bg.jpg);
+	vertical-align:top; height:36px; text-align:center;
+	}
+	
+.tbTitulo_NomeTela{
+	font-size:16px; color:#6f7071;
+	font-variant:small-caps; font-weight:bold; 
+	}
+	
+.tbGenerica_01{
+	border:1px solid #c0c1c1;
+	}
+.tbTd_cinzaEscura{
+	background-color:#eeefef; font-size:12px; color:#333333;
+	padding-left:20px; padding-right:20px; font-weight:bold; height:30px; vertical-align:middle;
+	text-align:right; 
+	}
+.tbTd_CinzaClara{
+	background-color:#f8f9f9; font-size:12px; color:#333333;
+	padding-left:20px; padding-right:20px; font-weight:bold; height:30px; vertical-align:middle; 
+	text-align:left;
+	}
+.tbTd_cinzaEscura_bordabaixo{
+	background-color:#eeefef; font-size:12px; color:#333333;
+	padding-left:20px; padding-right:20px; font-weight:bold; height:30px; vertical-align:middle;
+	text-align:right; border-bottom:1px solid #c0c1c1;
+	}
+.tbTd_CinzaClara_bordabaixo{
+	background-color:#f8f9f9; font-size:12px; color:#333333;
+	padding-left:20px; padding-right:20px; font-weight:bold; height:30px; vertical-align:middle; 
+	text-align:left; border-bottom: solid 1px #c0c1c1;
+	}
+	
+.tbGrid_Mestra{
+	background-color:#566432;
+	}
+		
+.tbGrid_cabecalho{
+	text-align:center; font-size:11px; color:#FFFFFF; font-weight:bold;
+	background-color:#668024;
+	}
+.tbGrid_cinzaClara{
+	background-color:#efefef; 
+	font-size:10px; color:#333333; text-align:center; vertical-align:middle;
+	}
+.tbGrid_Branca{
+	background-color:#f8f9f9; 
+	font-size:10px; color:#333333; text-align:center; vertical-align:middle;
+	}
+
+.tbCadastro_Mestra{
+	background-color:#f6f6f6; 
+	border: solid 1px #c0c1c1;
+	padding: 5px;
+	}
+	
+/* Form */
+
+.campoTexto{
+	background-color:#FFFFFF;
+	border: solid 1px #b6b6b6;
+	font-size:12px; color:#333333;
+	}
+	
+/* Botões */	
+
+.btComim_fundo{
+	border:solid 1px #90b530;
+	background-image:url(../../imgsCCAB/bts_background.jpg); background-repeat:repeat-x;
+	height:22px; font-size:10px; color:#FFFFFF;
+	font-variant:small-caps; text-align:center;
+	}
+	
+.btComum_fundo{
+	font-size:12px; color:#FFFFFF;
+	font-variant:small-caps; font-weight:bold; text-align:center; 
+	text-decoration:none;
+	}
+	
+.btComum_fundo:hover{
+	font-size:12px; color:#ffff00;
+	font-variant:small-caps; font-weight:bold; text-align:center; text-align:center;
+	text-decoration:none;
+	}
+

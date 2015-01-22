@@ -1,0 +1,83 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%Response.Cache.SetExpires(DateTime.Now.AddYears(-30));%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.01)" />
+    <link href="App_Themes/Default/estiloCCAB.css" rel="stylesheet" type="text/css" />
+</head>
+<body onkeypress="if(event.keyCode == 13){event.cancelBubble = true; event.returnValue = false;}">
+    <form id="form1" method="post" submitdisabledcontrols="true" enctype="multipart/form-data" runat="server">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr>
+            <td colspan="2" valign="top">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="222" rowspan="2" valign="top">
+                            <asp:Image ID="Image1" runat="server" Width="222" Height="105" ImageAlign="Top" ImageUrl="~/imgsCCAB/comumTopo_01.jpg" />
+                        </td>
+                        <td width="490" height="70" valign="top">
+                            <asp:Image ID="Image2" runat="server" Width="490" Height="70" ImageAlign="Top" ImageUrl="~/imgsCCAB/comumTopo_02.jpg" />
+                        </td>
+                        <td rowspan="2" valign="top" class="tdTopo_background03">
+                            &nbsp;
+                        </td>
+                        <td width="287" align="right" valign="top">
+                            <asp:Image ID="Image3" runat="server" Width="287" Height="70" ImageAlign="Top" ImageUrl="~/imgsCCAB/comumTopo_04.jpg" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" class="tdTopo_nomeCooperativa" colspan="2">
+                            <asp:label ID="lbUsuario" SkinID="normal" runat="server" />
+                        </td>
+                        <td valign="top" class="tdTopo_nomeUsuario">
+                            <asp:label ID="lbVersao" SkinID="normal" runat="server" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:LinkButton ID="btnEncerrar" runat="server" onclick="btnEncerrar_Click">Encerrar</asp:LinkButton>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td width="222" valign="top" class="MenuBG"> 
+                <!-- OnPreRender="TreeView_CollapseExpand" 
+                    <SelectedNodeStyle CssClass="treeviewselected" />
+                    <RootNodeStyle CssClass="rootnode" /> 
+                -->
+                <div style="margin-top: 12px">
+                    <asp:TreeView ID="TreeView1" NodeIndent="2" NodeStyle-VerticalPadding="2" CssClass="treeview" 
+                        NodeStyle-HorizontalPadding="2" runat="server" EnableClientScript="true" 
+                        ImageSet="Custom" Width="200" ShowExpandCollapse="false" LeafNodeStyle-CssClass="treeViewLeafNode"   
+                        ParentNodeStyle-Width="190" ParentNodeStyle-CssClass="treeviewParentNode"  
+                        ParentNodeStyle-ChildNodesPadding="10" OnTreeNodeDataBound="TreeView_TreeNodeDataBound" 
+                        CollapseImageToolTip="Fechar {0}" ExpandImageToolTip="Abrir {0}">
+                        <DataBindings>
+                            <asp:TreeNodeBinding
+                            DataMember="System.Data.DataRowView" PopulateOnDemand="false" SelectAction="Select" 
+                            ValueField="cdItemMenuSEQ" 
+                            TextField="dsItemMenu" 
+                            NavigateUrlField="dsEnderecoChamadaItemMenu" />
+                        </DataBindings>
+                    </asp:TreeView>
+                </div>
+            </td><!-- width="1105" height="683" -->
+            <td width="1105" height="423" align="center" valign="top" class="tdConteudo">
+                <asp:ScriptManager EnableScriptGlobalization="true" AsyncPostBackTimeout="360000" ID="ScriptManager1" EnablePartialRendering="true" runat="server" />
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="top" class="tdRodape02">
+                <asp:Image ID="Image4" runat="server" width="150" height="40" ImageAlign="Top" ImageUrl="~/imgsCCAB/comumRodape_imagem.jpg" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

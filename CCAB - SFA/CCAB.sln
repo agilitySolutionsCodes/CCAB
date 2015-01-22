@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CCAB", "..\CCAB", "{FAA91D03-BE65-4CD3-BD4E-B44C53E0C020}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/CCAB - SFA", YYDAAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/CCAB"
+		Debug.AspNetCompiler.PhysicalPath = "..\CCAB\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CCAB\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CCAB"
+		Release.AspNetCompiler.PhysicalPath = "..\CCAB\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CCAB\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64013"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = .
+		SccLocalPath1 = C:\\Projetos\\Convergence\\CCAB
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		DebugLocal|.NET = DebugLocal|.NET
+		Production|.NET = Production|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAA91D03-BE65-4CD3-BD4E-B44C53E0C020}.Debug|.NET.ActiveCfg = Debug|.NET
+		{FAA91D03-BE65-4CD3-BD4E-B44C53E0C020}.Debug|.NET.Build.0 = Debug|.NET
+		{FAA91D03-BE65-4CD3-BD4E-B44C53E0C020}.DebugLocal|.NET.ActiveCfg = Debug|.NET
+		{FAA91D03-BE65-4CD3-BD4E-B44C53E0C020}.DebugLocal|.NET.Build.0 = Debug|.NET
+		{FAA91D03-BE65-4CD3-BD4E-B44C53E0C020}.Production|.NET.ActiveCfg = Debug|.NET
+		{FAA91D03-BE65-4CD3-BD4E-B44C53E0C020}.Production|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
